@@ -8,19 +8,25 @@
 
 class Game {
 public:
-  enum Player { kNone, kWhite, kBlack };
-private:
-  Board board_;
-  Player current_player_;
+    enum Player { None,
+                  White,
+                  Black };
 
-  std::pair<int, int> GetMoveFrom() noexcept;
-  static std::pair<int, int> GetMoveTo(std::pair<int, int> from,
-                                       const std::vector<std::pair<int, int>>& possible) noexcept;
+private:
+    Board board_;
+    Player current_player_;
+
+    std::pair<int, int> get_move_from() noexcept;
+    static std::pair<int, int>
+    get_move_to(std::pair<int, int> from,
+                const std::vector<std::pair<int, int>>& possible) noexcept;
+
 public:
-  Game() noexcept: board_(), current_player_(Player::kWhite) {}
-  [[nodiscard]] Player GetWinner() const noexcept;
-  void PrintBoard() noexcept;
-  void Loop() noexcept;
+    Game() noexcept : board_(), current_player_(Player::White) {}
+
+    [[nodiscard]] Player get_winner() const noexcept;
+    void print_board() noexcept;
+    void loop() noexcept;
 };
 
-#endif //PROSTERNO_GAME_GAME_H_
+#endif// PROSTERNO_GAME_GAME_H_

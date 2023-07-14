@@ -5,9 +5,11 @@
 
 class WhitePiece : public Piece {
 public:
-  explicit WhitePiece(std::pair<int, int>& position) : Piece(position) {}
-  std::vector<std::pair<int, int>> GetMoves() noexcept override;
-  ~WhitePiece() override = default;
+    explicit WhitePiece(std::pair<int, int>& position) : Piece(position) {}
+
+    std::vector<std::pair<int, int>> get_moves() noexcept override;
+
+    ~WhitePiece() override = default;
 };
 
-#endif //PROSTERNO_PIECE_WHITEPIECE_H_
+#endif// PROSTERNO_PIECE_WHITEPIECE_H_

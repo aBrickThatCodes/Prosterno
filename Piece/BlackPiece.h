@@ -5,9 +5,11 @@
 
 class BlackPiece : public Piece {
 public:
-  explicit BlackPiece(std::pair<int, int>& position) : Piece(position) {}
-  std::vector<std::pair<int, int>> GetMoves() noexcept override;
-  ~BlackPiece() override = default;
+    explicit BlackPiece(std::pair<int, int>& position) : Piece(position) {}
+
+    std::vector<std::pair<int, int>> get_moves() noexcept override;
+
+    ~BlackPiece() override = default;
 };
 
-#endif //PROSTERNO_PIECE_BLACKPIECE_H_
+#endif// PROSTERNO_PIECE_BLACKPIECE_H_
