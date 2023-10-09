@@ -1,4 +1,4 @@
-#include "Scoreboard.h"
+#include "Scoreboard.hpp"
 
 #include <cstdlib>
 #include <fstream>
@@ -14,7 +14,8 @@ void Scoreboard::read_file(const fs::path& p) noexcept {
     }
 
     std::fstream fin(path_);
-    int w, b;
+    int w;
+    int b;
     if (fin >> w >> b) {
         scoreboard_.at("white") = w;
         scoreboard_.at("black") = b;
@@ -37,7 +38,8 @@ Scoreboard::Scoreboard() noexcept : path_("scoreboard.txt") {
     }
 
     std::fstream fin(path_);
-    int w, b;
+    int w;
+    int b;
     if (fin >> w >> b) {
         scoreboard_.insert({"white", w});
         scoreboard_.insert({"black", b});

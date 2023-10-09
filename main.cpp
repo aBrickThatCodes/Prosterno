@@ -1,5 +1,5 @@
-#include "Game/Game.h"
-#include "Scoreboard/Scoreboard.h"
+#include "Game/Game.hpp"
+#include "Scoreboard/Scoreboard.hpp"
 
 #include <cctype>
 #include <cstdlib>
@@ -24,18 +24,18 @@ int main(int argc, char** argv) {
     Scoreboard s;
 
     switch (argc) {
-    case 1:
-        break;
-    case 2: {
-        std::string arg = argv[1];
-        if (arg == "-h" || arg == "--help")
-            usage(argv[0]);
+        case 1:
+            break;
+        case 2: {
+            std::string arg = argv[1];
+            if (arg == "-h" || arg == "--help")
+                usage(argv[0]);
 
-        s.read_file(arg);
-        break;
-    }
-    default:
-        usage(argv[0]);
+            s.read_file(arg);
+            break;
+        }
+        default:
+            usage(argv[0]);
     }
 
     while (true) {
@@ -44,14 +44,14 @@ int main(int argc, char** argv) {
         std::cout << (g.get_winner() == Game::Player::White ? "White" : "Black")
                   << " won!\n";
         switch (g.get_winner()) {
-        case Game::None:
-            break;
-        case Game::White:
-            std::cout << "White won!\n";
-            s.white_won();
-        case Game::Black:
-            std::cout << "Black won!\n";
-            s.black_won();
+            case Game::None:
+                break;
+            case Game::White:
+                std::cout << "White won!\n";
+                s.white_won();
+            case Game::Black:
+                std::cout << "Black won!\n";
+                s.black_won();
         }
         std::cout << "Scores: " << s << '\n';
 
@@ -60,15 +60,15 @@ int main(int argc, char** argv) {
             std::cout << "Play again? (y/n)" << std::flush;
             std::cin >> choice;
             switch (tolower(choice)) {
-            case 'y':
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                break;
-            case 'n':
-                return EXIT_SUCCESS;
-            default:
-                std::cout << "Please enter y or n\n";
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;
+                case 'y':
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    break;
+                case 'n':
+                    return EXIT_SUCCESS;
+                default:
+                    std::cout << "Please enter y or n\n";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    continue;
             }
         }
     }

@@ -1,7 +1,7 @@
-#include "Game.h"
+#include "Game.hpp"
 
-#include "../Piece/BlackPiece.h"
-#include "../Piece/WhitePiece.h"
+#include "../Piece/BlackPiece.hpp"
+#include "../Piece/WhitePiece.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -114,22 +114,23 @@ std::pair<int, int> Game::get_move_from() noexcept {
 
         auto& p = board_.get_piece(pos);
         switch (current_player_) {
-        case White:
-            if (dynamic_cast<WhitePiece*>(p.get()) == nullptr) {
-                std::cout << "There is no white piece at (" << pos.second << ','
-                          << pos.first << ")\n";
-                continue;
-            }
-            break;
+            case White:
+                if (dynamic_cast<WhitePiece*>(p.get()) == nullptr) {
+                    std::cout << "There is no white piece at (" << pos.second << ','
+                              << pos.first << ")\n";
+                    continue;
+                }
+                break;
 
-        case Black:
-            if (dynamic_cast<BlackPiece*>(p.get()) == nullptr) {
-                std::cout << "There is no black piece at (" << pos.second << ','
-                          << pos.first << ")\n";
-                continue;
-            }
-            break;
-        case None: break;
+            case Black:
+                if (dynamic_cast<BlackPiece*>(p.get()) == nullptr) {
+                    std::cout << "There is no black piece at (" << pos.second << ','
+                              << pos.first << ")\n";
+                    continue;
+                }
+                break;
+            case None:
+                break;
         }
 
         return pos;

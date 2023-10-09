@@ -1,7 +1,7 @@
 #ifndef PROSTERNO_PIECE_BLACKPIECE_H_
 #define PROSTERNO_PIECE_BLACKPIECE_H_
 
-#include "Piece.h"
+#include "Piece.hpp"
 
 class BlackPiece : public Piece {
 public:

@@ -1,7 +1,7 @@
 #ifndef PROSTERNO_GAME_GAME_H_
 #define PROSTERNO_GAME_GAME_H_
 
-#include "../Board/Board.h"
+#include "../Board/Board.hpp"
 
 #include <utility>
 #include <vector>
@@ -14,7 +14,7 @@ public:
 
 private:
     Board board_;
-    Player current_player_;
+    Player current_player_ = White;
 
     std::pair<int, int> get_move_from() noexcept;
     static std::pair<int, int>
@@ -22,7 +22,7 @@ private:
                 const std::vector<std::pair<int, int>>& possible) noexcept;
 
 public:
-    Game() noexcept : board_(), current_player_(Player::White) {}
+    Game() noexcept : board_() {}
 
     [[nodiscard]] Player get_winner() const noexcept;
     void print_board() noexcept;

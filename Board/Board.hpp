@@ -1,7 +1,7 @@
 #ifndef PROSTERNO_BOARD_BOARD_H_
 #define PROSTERNO_BOARD_BOARD_H_
 
-#include "../Piece/Piece.h"
+#include "../Piece/Piece.hpp"
 
 #include <array>
 #include <memory>

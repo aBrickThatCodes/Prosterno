@@ -1,9 +1,9 @@
-#include "Board.h"
+#include "Board.hpp"
 
-#include "../Piece/BlackPiece.h"
-#include "../Piece/WhitePiece.h"
+#include "../Piece/BlackPiece.hpp"
+#include "../Piece/WhitePiece.hpp"
 
-Board::Board() noexcept : white_pieces_(8), black_pieces_(8) {
+Board::Board() noexcept : black_pieces_(8), white_pieces_(8) {
     for (int i = 0; i < 8; ++i) {
         std::pair<int, int> white_pos{i + 1, 1 + (i + 1) % 2};
         get_piece(white_pos) = std::unique_ptr<Piece>(new WhitePiece(white_pos));

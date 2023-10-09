@@ -3,4 +3,4 @@ project(Prosterno)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(prosterno main.cpp Board/Board.cpp Board/Board.h Piece/Piece.h Piece/BlackPiece.cpp Piece/BlackPiece.h Piece/WhitePiece.cpp Piece/WhitePiece.h Game/Game.cpp Game/Game.h Scoreboard/Scoreboard.cpp Scoreboard/Scoreboard.h)
+add_executable(prosterno main.cpp Board/Board.cpp Board/Board.hpp Piece/Piece.hpp Piece/BlackPiece.cpp Piece/BlackPiece.hpp Piece/WhitePiece.cpp Piece/WhitePiece.hpp Game/Game.cpp Game/Game.hpp Scoreboard/Scoreboard.cpp Scoreboard/Scoreboard.hpp)

@@ -10,15 +10,15 @@ protected:
 
 public:
     explicit Piece(std::pair<int, int> position) noexcept
-        : position(std::move(position)) {}
+        : position_(std::move(position)) {}
 
     Piece(Piece& p) noexcept = default;
 
     void set_position(std::pair<int, int>& position) noexcept {
-        position = position;
+        position_ = position;
     }
 
-    std::pair<int, int> position() { return position; }
+    std::pair<int, int> position() { return position_; }
 
     virtual std::vector<std::pair<int, int>> get_moves() noexcept = 0;
 
