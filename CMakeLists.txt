@@ -3,4 +3,6 @@ project(Prosterno)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(prosterno main.cpp Board/Board.cpp Board/Board.hpp Piece/Piece.hpp Piece/BlackPiece.cpp Piece/BlackPiece.hpp Piece/WhitePiece.cpp Piece/WhitePiece.hpp Game/Game.cpp Game/Game.hpp Scoreboard/Scoreboard.cpp Scoreboard/Scoreboard.hpp)
+add_compile_options("-stdlib=libc++")
+
+add_executable(prosterno main.cc Board/Board.cc Board/Board.h Piece/Piece.h Piece/BlackPiece.cc Piece/BlackPiece.h Piece/WhitePiece.cc Piece/WhitePiece.h Game/Game.cc Game/Game.h Scoreboard/Scoreboard.cc Scoreboard/Scoreboard.h)
